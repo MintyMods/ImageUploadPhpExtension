@@ -1,0 +1,12 @@
+
+.minty_image_wrapper img {
+    border:3px dashed blue !important;
+    display: block !important;
+    max-width: 100% !important; /* This rule is very important, please don't ignore this */
+}
+
+.dhtmlx-notification{
+    font-weight:bold !important;
+    color:white !important;
+    background-color:red !important;
+}

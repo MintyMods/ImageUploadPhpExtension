@@ -1,0 +1,19 @@
+services:
+    minty.imageupload.listener:
+        class: minty\imageupload\event\main_listener
+        arguments:
+            - '@dbal.conn'
+            - '@user'
+            - '@controller.helper'
+            - '@template'
+            - '%tables.phpbbgallery.users%'
+        tags:
+            - { name: event.listener }
+
+    minty.imageupload.controller:
+        class: minty\imageupload\controller\main
+        arguments:
+            - '@template'
+            - '@phpbbgallery.core.album'
+            - '@phpbbgallery.core.controller.album'
+            - '%tables.phpbbgallery.albums%'

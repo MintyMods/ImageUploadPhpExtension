@@ -1,0 +1,26 @@
+{
+    "name": "minty/imageupload",
+    "type": "phpbb-extension",
+    "description": "Allows uploading and rotating gallery images directly from posting page.",
+    "homepage": "https://www.mintymods.info/",
+    "version": "1.0.0-dev",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Minty",
+            "email": "MintyMods@gmail.com",
+            "homepage": "https://www.mintymods.info/",
+            "role": "Senior Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "display-name": "Minty Image Uploading / Rotating",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.2.0,<3.4.0@dev"
+        }
+    }
+}

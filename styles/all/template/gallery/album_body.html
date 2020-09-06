@@ -1,0 +1,33 @@
+<div class="topic-actions" <!-- IF S_HAS_SUBALBUM -->style="margin-top: 2em;"<!-- ENDIF -->>
+
+{{ S_ALBUMBOX }}
+
+<!-- IF U_UPLOAD_IMAGE -->
+	<form id="minty_imageupload_form" class="buttons" enctype="multipart/form-data">
+		<label for="minty_imageupload_file" title="<!-- IF S_IS_LOCKED -->{L_ALBUM_LOCKED}<!-- ELSE -->{L_UPLOAD_IMAGE}<!-- ENDIF -->" class="button icon-button <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->post-icon<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_ALBUM_LOCKED}<!-- ELSE --><i class="icon fa-upload fa-fw" aria-hidden="true"></i> {L_UPLOAD_IMAGE}<!-- ENDIF --></label>
+		<input type="file" id="minty_imageupload_file" class="hidden" name="files[]" accept="image/jpeg,image/png,image/gif" data-url="{U_UPLOAD_IMAGE}">
+	</form>
+<!-- ENDIF -->
+
+<!-- IF .pagination or TOTAL_IMAGES -->
+	<div class="pagination">
+		{TOTAL_IMAGES}
+		<!-- IF .pagination -->
+				&bull; <!-- INCLUDE pagination.html -->
+		<!-- ELSE -->
+				&bull; {PAGE_NUMBER}
+		<!-- ENDIF -->
+	</div>
+<!-- ENDIF -->
+
+</div>
+
+<!-- IF .imageblock -->
+	<!-- INCLUDE gallery/imageblock_popup.html -->
+<!-- ELSE -->
+	<!-- IF S_IS_POSTABLE -->
+	<div class="panel" style="margin-top: 20px;">
+		<strong>{L_NO_IMAGES_LONG}</strong>
+	</div>
+	<!-- ENDIF -->
+<!-- ENDIF -->

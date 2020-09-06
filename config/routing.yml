@@ -1,0 +1,12 @@
+minty_imageupload_controller:
+    path: /minty/imageupload/{album_id}
+    defaults: { _controller: minty.imageupload.controller:handle }
+    requirements:
+        album_id: '\d+'
+
+minty_imageupload_controller_start:
+    path: /minty/imageupload/{album_id}/{page}
+    defaults: { _controller: minty.imageupload.controller:handle }
+    requirements:
+        album_id: '\d+'
+        page: '\d+'

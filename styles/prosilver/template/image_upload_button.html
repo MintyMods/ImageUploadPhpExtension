@@ -1,0 +1,62 @@
+<button type="button" id="minty_imageupload_button" class="button button-secondary" value="Minty Upload">Minty Upload</button>
+
+<style>
+	#minty_imageupload_bg {
+		display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0,0,0,0.50);
+		z-index: 99998;
+	}
+	#minty_imageupload_x {
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(100%, -100%);
+		color: #2f74b3;
+		font-weight: bold;
+	}
+	#minty_imageupload_wrapper {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%;
+		height: 80%;
+		z-index: 99999;
+		box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.75);
+		margin: 0;
+	}
+	#minty_imageupload_container {
+		margin: 0;
+		height: 100%;
+		overflow-y: scroll;
+	}
+	#minty_imageupload_container .polaroid {
+		width: auto;
+		max-width: 242px;
+	}
+	#minty_imageupload_container .polaroid img {
+		width: 100%
+	}
+	#minty_imageupload_wrapper img {
+		cursor: pointer;
+	}
+</style>
+<div id="minty_imageupload_bg">
+	<div id="minty_imageupload_wrapper">
+		<button id="minty_imageupload_x">X</button>
+		<div class="cat-head" style="margin: 0;"></div>
+		<div id="minty_imageupload_container" class="panel clearfix"></div>
+	</div>
+</div>
+{% if not custom_tags %}
+	<script>
+		var form_name = 'qr_postform';
+		var text_name = 'message';
+	</script>
+	{% INCLUDEJS T_ASSETS_PATH ~ '/javascript/editor.js' %}
+{% endif %}

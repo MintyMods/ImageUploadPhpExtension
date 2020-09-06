@@ -1,0 +1,8 @@
+<script>
+window.minty_imageupload_url = '{{ U_minty_imageupload_URL | e('js') }}';
+window.minty_imageupload_start = '{{ U_minty_imageupload_START | e('js') }}';
+window.board_url = '{{ BOARD_URL | e('js') }}';
+</script>
+{% INCLUDEJS '@minty_imageupload/vault/vault.min.js' %}
+{% INCLUDEJS '@minty_imageupload/cropperjs/cropper.min.js' %}
+{% INCLUDEJS '@minty_imageupload/minty_image_upload.js' %}
